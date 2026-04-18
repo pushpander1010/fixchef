@@ -87,20 +87,60 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* ── Footer ── */}
         <footer className="bg-gradient-to-br from-orange-900 to-red-900 text-orange-100 mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-              <Link href="/" className="flex items-center gap-2.5">
-                <div className="w-8 h-8 bg-white/20 rounded-xl flex items-center justify-center">
-                  <span className="text-base">🍳</span>
-                </div>
-                <span className="font-display font-bold text-white text-lg">FixChef</span>
-              </Link>
-              <p className="text-sm text-orange-300">© {new Date().getFullYear()} FixChef. Cook something amazing today.</p>
-              <div className="flex gap-5 text-sm">
-                <Link href="/category/healthy" className="hover:text-white transition-colors">🥗 Healthy</Link>
-                <Link href="/category/sweets"  className="hover:text-white transition-colors">🍰 Sweets</Link>
-                <Link href="/category/spicy"   className="hover:text-white transition-colors">🌶️ Spicy</Link>
+
+            {/* Top row: logo + columns */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
+
+              {/* Brand */}
+              <div className="col-span-2 sm:col-span-1">
+                <Link href="/" className="flex items-center gap-2.5 mb-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-xl flex items-center justify-center">
+                    <span className="text-base">🍳</span>
+                  </div>
+                  <span className="font-display font-bold text-white text-lg">FixChef</span>
+                </Link>
+                <p className="text-sm text-orange-300 leading-relaxed">
+                  Easy, delicious recipes for every kitchen — with step-by-step guides and an AI cooking assistant.
+                </p>
               </div>
+
+              {/* Categories */}
+              <div>
+                <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Categories</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/category/healthy" className="hover:text-white transition-colors">🥗 Healthy</Link></li>
+                  <li><Link href="/category/sweets"  className="hover:text-white transition-colors">🍰 Sweets</Link></li>
+                  <li><Link href="/category/spicy"   className="hover:text-white transition-colors">🌶️ Spicy</Link></li>
+                  <li><Link href="/category/pasta"   className="hover:text-white transition-colors">🍝 Pasta</Link></li>
+                  <li><Link href="/category/baking"  className="hover:text-white transition-colors">🧁 Baking</Link></li>
+                </ul>
+              </div>
+
+              {/* Company */}
+              <div>
+                <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Company</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/about"   className="hover:text-white transition-colors">About Us</Link></li>
+                  <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                </ul>
+              </div>
+
+              {/* Legal */}
+              <div>
+                <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Legal</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                  <li><Link href="/terms"          className="hover:text-white transition-colors">Terms of Use</Link></li>
+                </ul>
+              </div>
+
             </div>
+
+            {/* Bottom row */}
+            <div className="border-t border-white/10 pt-6 text-center text-sm text-orange-300">
+              © {new Date().getFullYear()} FixChef. Cook something amazing today.
+            </div>
+
           </div>
         </footer>
 
