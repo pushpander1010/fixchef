@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { getRequestContext } from '@cloudflare/next-on-pages';
 import type { Metadata } from 'next';
 
-import { getRecipeBySlug, getAllPublishedSlugs } from '@/lib/db';
+import { getRecipeBySlug } from '@/lib/db';
 import { generateRecipeMetadata, generateRecipeJsonLd } from '@/lib/seo';
 
 import RecipeHero from '@/components/RecipeHero';
@@ -16,16 +16,10 @@ import YouTubeEmbed from '@/components/YouTubeEmbed';
 import AdSlot from '@/components/AdSlot';
 import RecipeChatbot from '@/components/RecipeChatbot';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: { slug: string };
-}
-
-export async function generateStaticParams() {
-  const { env } = getRequestContext();
-  const slugs = await getAllPublishedSlugs(env.DB);
-  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

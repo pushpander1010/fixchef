@@ -7,7 +7,6 @@ import type { Metadata } from 'next';
 import {
   getRecipesByCategory,
   getRecipeCountByCategory,
-  getAllCategories,
 } from '@/lib/db';
 import { generateCategoryMetadata } from '@/lib/seo';
 
@@ -15,21 +14,13 @@ import Breadcrumb from '@/components/Breadcrumb';
 import RecipeCard from '@/components/RecipeCard';
 import Pagination from '@/components/Pagination';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 const PAGE_SIZE = 24;
 
 interface PageProps {
   params: { slug: string };
   searchParams: { page?: string };
-}
-
-export async function generateStaticParams() {
-  const { env } = getRequestContext();
-  const categories = await getAllCategories(env.DB);
-  return categories.map((category) => ({
-    slug: category.toLowerCase().replace(/\s+/g, '-'),
-  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

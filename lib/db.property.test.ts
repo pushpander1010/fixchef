@@ -72,10 +72,10 @@ function makeD1Database(sqlDb: SqlJsDb): D1Database {
     async dump() {
       return new ArrayBuffer(0);
     },
-    async batch<T>(statements: D1PreparedStatement[]): Promise<D1Result<T>[]> {
+    async batch<T>(_statements: D1PreparedStatement[]): Promise<D1Result<T>[]> {
       return [];
     },
-    async exec<T>(query: string): Promise<D1ExecResult> {
+    async exec(_query: string): Promise<D1ExecResult> {
       sqlDb.run(query);
       return { count: 0, duration: 0 };
     },
