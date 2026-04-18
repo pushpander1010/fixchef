@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
+import CategoryCarousel from "@/components/CategoryCarousel";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -35,26 +36,44 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} antialiased bg-white text-gray-900 min-h-screen flex flex-col`}>
         <header className="border-b border-gray-100 bg-white sticky top-0 z-50 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 group">
-              {/* Logo mark */}
+          {/* Top bar: logo + search placeholder */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
+            <Link href="/" className="flex items-center gap-2 group shrink-0">
               <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center group-hover:bg-orange-600 transition-colors">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="white"/>
                   <path d="M8 6c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v1H8V6z" fill="white" opacity="0.7"/>
                 </svg>
               </div>
-              <span className="text-xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors">
-                Fix<span className="text-orange-500 group-hover:text-gray-900 transition-colors">Chef</span>
+              <span className="text-xl font-bold text-gray-900">
+                Fix<span className="text-orange-500">Chef</span>
               </span>
             </Link>
 
-            <nav className="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-600">
-              <Link href="/category/sweets" className="hover:text-orange-500 transition-colors">Sweets</Link>
-              <Link href="/category/healthy" className="hover:text-orange-500 transition-colors">Healthy</Link>
-              <Link href="/category/spicy" className="hover:text-orange-500 transition-colors">Spicy</Link>
-              <Link href="/category/fast-foods" className="hover:text-orange-500 transition-colors">Fast Foods</Link>
-            </nav>
+            <div className="flex-1 max-w-md hidden sm:block">
+              <div className="relative">
+                <svg className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input
+                  type="search"
+                  placeholder="Search recipes…"
+                  className="w-full pl-9 pr-4 py-1.5 text-sm border border-gray-200 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition"
+                />
+              </div>
+            </div>
+
+            <Link
+              href="/category/healthy"
+              className="shrink-0 text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 transition-colors px-4 py-1.5 rounded-full"
+            >
+              Explore
+            </Link>
+          </div>
+
+          {/* Category carousel strip */}
+          <div className="border-t border-gray-50 px-4 py-2">
+            <CategoryCarousel />
           </div>
         </header>
 
