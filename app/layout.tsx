@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Link from "next/link";
-import Script from "next/script";
 import CategoryCarousel from "@/components/CategoryCarousel";
 import "./globals.css";
 
@@ -36,14 +35,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6216304334889617"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
       <body className={`${inter.variable} ${playfair.variable} font-body antialiased bg-cream text-foreground min-h-screen flex flex-col`}>
 
         {/* ── Header ── */}

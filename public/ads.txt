@@ -1,1 +1,1 @@
-# AdSense publisher ID will be added here
+google.com, pub-6216304334889617, DIRECT, f08c47fec0942fa0
