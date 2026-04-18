@@ -8,7 +8,7 @@ const nextConfig = {
   },
 };
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' && !process.env.NEXT_BUILD_WORKER) {
   const { initOpenNextCloudflareForDev } = await import('@opennextjs/cloudflare');
   await initOpenNextCloudflareForDev();
 }

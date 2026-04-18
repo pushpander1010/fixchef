@@ -3663,6 +3663,11 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/robots.txt/route_client-reference-manifest.js": {
+      "bytes": 315,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
       "bytes": 7272,
       "imports": [],
@@ -3673,13 +3678,18 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/icon/route_client-reference-manifest.js": {
+      "bytes": 309,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js": {
       "bytes": 8996,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.external.js": {
-      "bytes": 28493,
+      "bytes": 27110,
       "imports": [
         {
           "path": "path",
@@ -3737,6 +3747,11 @@
           "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\sitemap.xml\\route_client-reference-manifest.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/robots.txt/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\robots.txt\\route_client-reference-manifest.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\_not-found\\page_client-reference-manifest.js"
@@ -3745,6 +3760,11 @@
           "path": ".open-next/server-functions/default/.next/server/app/api/chat/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\api\\chat\\route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/icon/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\icon\\route_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js",
@@ -3934,6 +3954,17 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/robots.txt/route.js": {
+      "bytes": 436,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/[turbopack]_runtime.js",
+          "kind": "require-call",
+          "original": "../../chunks/[turbopack]_runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/_not-found/page.js": {
       "bytes": 899,
       "imports": [
@@ -3956,6 +3987,17 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/app/icon/route.js": {
+      "bytes": 424,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/[turbopack]_runtime.js",
+          "kind": "require-call",
+          "original": "../../chunks/[turbopack]_runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/app/page.js": {
       "bytes": 1023,
       "imports": [
@@ -3968,7 +4010,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-      "bytes": 6276,
+      "bytes": 6678,
       "imports": [
         {
           "path": "path",
@@ -4051,6 +4093,11 @@
           "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\sitemap.xml\\route.js"
         },
         {
+          "path": ".open-next/server-functions/default/.next/server/app/robots.txt/route.js",
+          "kind": "require-call",
+          "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\robots.txt\\route.js"
+        },
+        {
           "path": ".open-next/server-functions/default/.next/server/app/_not-found/page.js",
           "kind": "require-call",
           "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\_not-found\\page.js"
@@ -4059,6 +4106,11 @@
           "path": ".open-next/server-functions/default/.next/server/app/api/chat/route.js",
           "kind": "require-call",
           "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\api\\chat\\route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/icon/route.js",
+          "kind": "require-call",
+          "original": "C:\\AI\\fixchef\\.open-next\\server-functions\\default\\.next\\server\\app\\icon\\route.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/page.js",
@@ -5646,7 +5698,7 @@
       "format": "esm"
     },
     ".open-next/server-functions/default/index.mjs": {
-      "bytes": 87727,
+      "bytes": 85866,
       "imports": [
         {
           "path": "node:module",
@@ -6876,17 +6928,23 @@
         ".open-next/server-functions/default/.next/server/app/sitemap.xml/route_client-reference-manifest.js": {
           "bytesInOutput": 464
         },
+        ".open-next/server-functions/default/.next/server/app/robots.txt/route_client-reference-manifest.js": {
+          "bytesInOutput": 462
+        },
         ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
           "bytesInOutput": 6923
         },
         ".open-next/server-functions/default/.next/server/app/api/chat/route_client-reference-manifest.js": {
           "bytesInOutput": 458
         },
+        ".open-next/server-functions/default/.next/server/app/icon/route_client-reference-manifest.js": {
+          "bytesInOutput": 450
+        },
         ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js": {
           "bytesInOutput": 8533
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.external.js": {
-          "bytesInOutput": 19797
+          "bytesInOutput": 18386
         },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/@vercel/og/index.edge.js": {
           "bytesInOutput": 545649
@@ -6918,17 +6976,23 @@
         ".open-next/server-functions/default/.next/server/app/sitemap.xml/route.js": {
           "bytesInOutput": 565
         },
+        ".open-next/server-functions/default/.next/server/app/robots.txt/route.js": {
+          "bytesInOutput": 564
+        },
         ".open-next/server-functions/default/.next/server/app/_not-found/page.js": {
           "bytesInOutput": 1028
         },
         ".open-next/server-functions/default/.next/server/app/api/chat/route.js": {
           "bytesInOutput": 447
         },
+        ".open-next/server-functions/default/.next/server/app/icon/route.js": {
+          "bytesInOutput": 546
+        },
         ".open-next/server-functions/default/.next/server/app/page.js": {
           "bytesInOutput": 1146
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-          "bytesInOutput": 3727
+          "bytesInOutput": 3907
         },
         ".open-next/server-functions/default/node_modules/next/dist/lib/interop-default.js": {
           "bytesInOutput": 366
@@ -7135,10 +7199,10 @@
           "bytesInOutput": 5072
         },
         ".open-next/server-functions/default/index.mjs": {
-          "bytesInOutput": 61288
+          "bytesInOutput": 59479
         }
       },
-      "bytes": 2597165
+      "bytes": 2596147
     }
   }
 }

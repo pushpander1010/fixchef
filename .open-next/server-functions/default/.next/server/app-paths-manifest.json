@@ -6,9 +6,9 @@
   "/api/recipes/publish/route": "app/api/recipes/publish/route.js",
   "/api/youtube-search/route": "app/api/youtube-search/route.js",
   "/category/[slug]/page": "app/category/[slug]/page.js",
-  "/icon/route": "app-edge-has-no-entrypoint",
+  "/icon/route": "app/icon/route.js",
   "/page": "app/page.js",
   "/recipes/[slug]/page": "app/recipes/[slug]/page.js",
-  "/robots.txt/route": "app-edge-has-no-entrypoint",
+  "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js"
 }
