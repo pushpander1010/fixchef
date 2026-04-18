@@ -1,0 +1,9 @@
+name = "fixchef"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fixchef"
+database_id = "03bb856b-d82a-48d9-9042-8f289528030d"
