@@ -1,6 +1,4 @@
-export const runtime = 'edge';
-
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { getAllCategories, getRecipesByCategory } from '@/lib/db';
 import CategorySection from '@/components/CategorySection';
 import AdSlot from '@/components/AdSlot';
@@ -8,7 +6,7 @@ import AdSlot from '@/components/AdSlot';
 export const revalidate = 3600;
 
 export default async function HomePage() {
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
   const categories = await getAllCategories(env.DB);
 
   const categoriesWithRecipes = await Promise.all(

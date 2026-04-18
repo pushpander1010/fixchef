@@ -1,6 +1,4 @@
-export const runtime = 'edge';
-
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 
@@ -12,7 +10,7 @@ export async function GET(request: Request): Promise<Response> {
     return Response.json({ error: 'Missing query parameter: q' }, { status: 400 });
   }
 
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
   const apiKey = env.YOUTUBE_API_KEY;
   if (!apiKey) {
     return Response.json({ error: 'YouTube API key not configured' }, { status: 500 });

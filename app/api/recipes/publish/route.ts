@@ -1,6 +1,4 @@
-export const runtime = 'edge';
-
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { revalidatePath } from 'next/cache';
 import { RecipeSchema } from '@/lib/validate';
 import { insertRecipe } from '@/lib/db';
@@ -47,7 +45,7 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   const recipe = result.data as RecipeRecord;
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
 
   // Fetch YouTube video ID if not already set
   if (!recipe.youtube_video_id && recipe.youtube_query) {

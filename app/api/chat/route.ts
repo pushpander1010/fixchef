@@ -1,6 +1,4 @@
-export const runtime = 'edge';
-
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { getRecipeBySlug } from '@/lib/db';
 
 interface ChatMessage {
@@ -26,7 +24,7 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ reply: "Sorry, I couldn't process that. Please try again." }, { status: 400 });
   }
 
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
   const recipe = await getRecipeBySlug(env.DB, recipeSlug);
   if (!recipe) {
     return Response.json({ reply: "Sorry, I couldn't find that recipe." }, { status: 404 });

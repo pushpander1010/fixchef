@@ -1,7 +1,5 @@
-export const runtime = 'edge';
-
 import { notFound } from 'next/navigation';
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import type { Metadata } from 'next';
 
 import { getRecipeBySlug } from '@/lib/db';
@@ -23,14 +21,14 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
   const recipe = await getRecipeBySlug(env.DB, params.slug);
   if (!recipe) return {};
   return generateRecipeMetadata(recipe);
 }
 
 export default async function RecipePage({ params }: PageProps) {
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
   const recipe = await getRecipeBySlug(env.DB, params.slug);
 
   if (!recipe) {

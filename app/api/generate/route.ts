@@ -1,6 +1,4 @@
-export const runtime = 'edge';
-
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { RecipeSchema } from '@/lib/validate';
 
 interface GenerateRequest {
@@ -56,7 +54,7 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ error: 'Missing required field: keyword' }, { status: 400 });
   }
 
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
   const apiKey = env.TOGETHER_API_KEY;
   if (!apiKey) {
     return Response.json({ error: 'Together AI API key not configured' }, { status: 500 });

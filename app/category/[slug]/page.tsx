@@ -1,7 +1,5 @@
-export const runtime = 'edge';
-
 import { notFound } from 'next/navigation';
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 import type { Metadata } from 'next';
 
 import {
@@ -33,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CategoryPage({ params, searchParams }: PageProps) {
-  const { env } = getRequestContext();
+  const { env } = await getCloudflareContext({ async: true });
 
   // Reconstruct display name from slug (e.g. "gym-fitness" → "Gym Fitness")
   const categoryDisplay = params.slug

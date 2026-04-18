@@ -1,0 +1,19 @@
+{
+  "app": {
+    "[project]/app/_not-found/page": [
+      "static/media/GeistVF-s.p.04dvp7dj03si8.woff"
+    ],
+    "[project]/app/category/[slug]/page": [
+      "static/media/GeistVF-s.p.04dvp7dj03si8.woff"
+    ],
+    "[project]/app/page": [
+      "static/media/GeistVF-s.p.04dvp7dj03si8.woff"
+    ],
+    "[project]/app/recipes/[slug]/page": [
+      "static/media/GeistVF-s.p.04dvp7dj03si8.woff"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

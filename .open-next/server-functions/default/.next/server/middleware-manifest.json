@@ -1,0 +1,85 @@
+{
+  "version": 3,
+  "middleware": {},
+  "sortedMiddleware": [],
+  "functions": {
+    "/icon/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/icon/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_icon_route_actions_0io2.vy.js",
+        "server/edge/chunks/node_modules_next_dist_0mulzfl._.js",
+        "server/edge/chunks/[root-of-the-server]__0w8nc0.._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_11csqje._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0.phe42.js"
+      ],
+      "name": "app/icon/route",
+      "page": "/icon/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0.phe42.js",
+      "matchers": [
+        {
+          "regexp": "^/icon(?:/)?$",
+          "originalSource": "/icon"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0656eb_.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0656eb_.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "JHK9JLyib_FJcfu_zL7t-",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "xNRxvdHYbijjq60HVxmw39VLbJaW/ZuSFnGxFXC7qxM=",
+        "__NEXT_PREVIEW_MODE_ID": "3ee41c6b3e3c5b4c4b82fc7fe5d75c08",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "aba65b830e5b1914a0461603a1f32d10fa0775110795f504ee8348639d17e936",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "06fadac4741b757044b5c8a5c840169ed930e0a1c6a910034449b2b514aa9340"
+      }
+    },
+    "/robots.txt/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/robots.txt/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_robots_txt_route_actions_0goco.x.js",
+        "server/edge/chunks/node_modules_next_dist_esm_0tf4-sw._.js",
+        "server/edge/chunks/[root-of-the-server]__0w8nc0.._.js",
+        "server/edge/chunks/node_modules_next_dist_esm_build_templates_edge-app-route_0zhw6ta.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0nvmtsm.js"
+      ],
+      "name": "app/robots.txt/route",
+      "page": "/robots.txt/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0nvmtsm.js",
+      "matchers": [
+        {
+          "regexp": "^/robots\\.txt(?:/)?$",
+          "originalSource": "/robots.txt"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "JHK9JLyib_FJcfu_zL7t-",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "xNRxvdHYbijjq60HVxmw39VLbJaW/ZuSFnGxFXC7qxM=",
+        "__NEXT_PREVIEW_MODE_ID": "3ee41c6b3e3c5b4c4b82fc7fe5d75c08",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "aba65b830e5b1914a0461603a1f32d10fa0775110795f504ee8348639d17e936",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "06fadac4741b757044b5c8a5c840169ed930e0a1c6a910034449b2b514aa9340"
+      }
+    }
+  }
+}
