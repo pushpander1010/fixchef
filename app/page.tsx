@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { getRequestContext } from '@cloudflare/next-on-pages';
 import { getAllCategories, getRecipesByCategory } from '@/lib/db';
 import CategorySection from '@/components/CategorySection';

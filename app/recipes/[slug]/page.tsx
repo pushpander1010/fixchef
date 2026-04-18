@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { notFound } from 'next/navigation';
 import { getRequestContext } from '@cloudflare/next-on-pages';
 import type { Metadata } from 'next';

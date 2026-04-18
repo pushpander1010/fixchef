@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import type { MetadataRoute } from 'next';
 import { getRequestContext } from '@cloudflare/next-on-pages';
 import { getAllPublishedSlugs } from '@/lib/db';
