@@ -1,14 +1,14 @@
 {
-  "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/_global-error/page": "/_global-error",
   "/api/chat/route": "/api/chat",
   "/api/generate/route": "/api/generate",
   "/api/recipes/publish/route": "/api/recipes/publish",
   "/api/youtube-search/route": "/api/youtube-search",
-  "/category/[slug]/page": "/category/[slug]",
-  "/icon/route": "/icon",
-  "/page": "/",
-  "/recipes/[slug]/page": "/recipes/[slug]",
   "/robots.txt/route": "/robots.txt",
-  "/sitemap.xml/route": "/sitemap.xml"
+  "/icon/route": "/icon",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/page": "/",
+  "/category/[slug]/page": "/category/[slug]",
+  "/recipes/[slug]/page": "/recipes/[slug]"
 }

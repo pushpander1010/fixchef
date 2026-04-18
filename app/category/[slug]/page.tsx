@@ -13,19 +13,19 @@ import RecipeCard from '@/components/RecipeCard';
 import Pagination from '@/components/Pagination';
 import AdSlot from '@/components/AdSlot';
 
-export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 const PAGE_SIZE = 24;
 
 interface PageProps {
-  params: { slug: string };
-  searchParams: { page?: string };
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ page?: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   // Convert slug back to category name for metadata
-  const category = params.slug
+  const { slug } = await params;
+  const category = slug
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
@@ -35,13 +35,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function CategoryPage({ params, searchParams }: PageProps) {
   const { env } = await getCloudflareContext({ async: true });
 
+  const { slug } = await params;
+  const { page: pageParam } = await searchParams;
+
   // Reconstruct display name from slug (e.g. "gym-fitness" → "Gym Fitness")
-  const categoryDisplay = params.slug
+  const categoryDisplay = slug
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
 
-  const page = Math.max(1, parseInt(searchParams.page ?? '1', 10) || 1);
+  const page = Math.max(1, parseInt(pageParam ?? '1', 10) || 1);
 
   const [recipes, totalCount] = await Promise.all([
     getRecipesByCategory(env.DB, categoryDisplay, page),
@@ -53,7 +56,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
   }
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
-  const basePath = `/category/${params.slug}`;
+  const basePath = `/category/${slug}`;
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-8">

@@ -18,3 +18,11 @@ binding = "IMAGES"
 binding = "DB"
 database_name = "fixchef"
 database_id = "03bb856b-d82a-48d9-9042-8f289528030d"
+
+# ── Secrets / env vars ──────────────────────────────────────────────────────
+# For local dev these are read from .dev.vars (gitignored).
+# In production set them via: wrangler secret put TOGETHER_API_KEY
+# Or in the Cloudflare dashboard → Workers → fixchef → Settings → Variables.
+[vars]
+# TOGETHER_API_KEY and YOUTUBE_API_KEY are secrets — set via wrangler secret put
+# or the Cloudflare dashboard. Do NOT put real values here.

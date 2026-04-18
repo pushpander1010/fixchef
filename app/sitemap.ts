@@ -2,7 +2,6 @@ import type { MetadataRoute } from 'next';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { getAllPublishedSlugs } from '@/lib/db';
 
-export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 const SITE_URL = 'https://fixchef.com';

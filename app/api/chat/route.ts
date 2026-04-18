@@ -1,8 +1,6 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { getRecipeBySlug } from '@/lib/db';
 
-export const runtime = 'edge';
-
 interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
@@ -32,10 +30,19 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ reply: "Sorry, I couldn't find that recipe." }, { status: 404 });
   }
 
-  const systemPrompt = `You are a cooking assistant for the recipe "${recipe.title}".
-You have access ONLY to the following recipe data and must answer questions exclusively based on this information.
-If a question is not related to this specific recipe (its ingredients, steps, substitutions, storage, nutrition, tips, or cooking techniques),
-you MUST refuse to answer and respond with: "I can only answer questions about this specific recipe."
+  const systemPrompt = `You are Chef AI, a friendly and knowledgeable cooking assistant embedded on a recipe page.
+You are here to help the user cook "${recipe.title}" successfully.
+Answer questions about ingredients, steps, substitutions, storage, nutrition, tips, and cooking techniques for this recipe.
+If a question is completely unrelated to cooking or this recipe, gently redirect: "I'm here to help you cook this dish — ask me anything about the recipe!"
+
+RESPONSE FORMAT — always follow these rules:
+- Use short bullet points (•) for every answer, even for a single fact.
+- Each bullet must be one concise sentence — no padding, no filler.
+- Aim for 2–5 bullets per answer; never more than 6.
+- Do NOT write long paragraphs or introductory sentences before the bullets.
+- If the answer is a single fact, still format it as one bullet.
+
+Use the recipe data below as your source of truth.
 
 Recipe data:
 ${JSON.stringify(recipe, null, 2)}`;
@@ -58,7 +65,7 @@ ${JSON.stringify(recipe, null, 2)}`;
           { role: 'system', content: systemPrompt },
           ...messages,
         ],
-        max_tokens: 512,
+        max_tokens: 300,
         temperature: 0.7,
       }),
     });

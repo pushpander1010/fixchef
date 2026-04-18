@@ -4,7 +4,6 @@ import { getAllCategories, getRecipesByCategory } from '@/lib/db';
 import CategorySection from '@/components/CategorySection';
 import AdSlot from '@/components/AdSlot';
 
-export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {

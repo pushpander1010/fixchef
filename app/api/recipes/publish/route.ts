@@ -1,7 +1,5 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { revalidatePath } from 'next/cache';
-
-export const runtime = 'edge';
 import { RecipeSchema } from '@/lib/validate';
 import { insertRecipe } from '@/lib/db';
 import type { RecipeRecord } from '@/lib/types';

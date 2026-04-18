@@ -14,23 +14,24 @@ import YouTubeEmbed from '@/components/YouTubeEmbed';
 import AdSlot from '@/components/AdSlot';
 import RecipeChatbot from '@/components/RecipeChatbot';
 
-export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { env } = await getCloudflareContext({ async: true });
-  const recipe = await getRecipeBySlug(env.DB, params.slug);
+  const { slug } = await params;
+  const recipe = await getRecipeBySlug(env.DB, slug);
   if (!recipe) return {};
   return generateRecipeMetadata(recipe);
 }
 
 export default async function RecipePage({ params }: PageProps) {
   const { env } = await getCloudflareContext({ async: true });
-  const recipe = await getRecipeBySlug(env.DB, params.slug);
+  const { slug } = await params;
+  const recipe = await getRecipeBySlug(env.DB, slug);
 
   if (!recipe) {
     notFound();
