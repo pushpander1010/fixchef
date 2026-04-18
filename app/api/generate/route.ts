@@ -1,6 +1,8 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { RecipeSchema } from '@/lib/validate';
 
+export const runtime = 'edge';
+
 interface GenerateRequest {
   keyword: string;
 }

@@ -1,6 +1,8 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { getRecipeBySlug } from '@/lib/db';
 
+export const runtime = 'edge';
+
 interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;

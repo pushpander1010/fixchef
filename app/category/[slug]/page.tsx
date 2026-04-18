@@ -11,7 +11,9 @@ import { generateCategoryMetadata } from '@/lib/seo';
 import Breadcrumb from '@/components/Breadcrumb';
 import RecipeCard from '@/components/RecipeCard';
 import Pagination from '@/components/Pagination';
+import AdSlot from '@/components/AdSlot';
 
+export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 const PAGE_SIZE = 24;
@@ -64,9 +66,14 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         />
       </div>
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">
+      <h1 className="text-3xl font-bold text-gray-900 mb-6">
         {categoryDisplay} Recipes
       </h1>
+
+      {/* Ad — top of category listing */}
+      <div className="mb-8">
+        <AdSlot slot="category-top" />
+      </div>
 
       {recipes.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -79,6 +86,11 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
           No recipes found in this category.
         </p>
       )}
+
+      {/* Ad — below recipe grid, above pagination */}
+      <div className="mt-10 mb-4">
+        <AdSlot slot="category-bottom" />
+      </div>
 
       <Pagination page={page} totalPages={totalPages} basePath={basePath} />
     </main>

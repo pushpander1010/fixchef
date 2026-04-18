@@ -59,4 +59,6 @@ export type AdSlotId =
   | 'above-ingredients'
   | 'between-steps-tips'
   | 'sidebar-below-video'
-  | 'homepage-below-first-category';
+  | 'homepage-below-first-category'
+  | 'category-top'
+  | 'category-bottom';

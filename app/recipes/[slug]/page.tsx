@@ -14,6 +14,7 @@ import YouTubeEmbed from '@/components/YouTubeEmbed';
 import AdSlot from '@/components/AdSlot';
 import RecipeChatbot from '@/components/RecipeChatbot';
 
+export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 interface PageProps {

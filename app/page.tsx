@@ -1,9 +1,16 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare';
+import type { Metadata } from 'next';
 import { getAllCategories, getRecipesByCategory } from '@/lib/db';
 import CategorySection from '@/components/CategorySection';
 import AdSlot from '@/components/AdSlot';
 
-export const revalidate = 3600;
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Easy Recipes for Every Kitchen',
+  description: 'Discover thousands of easy, delicious recipes with step-by-step guides, nutrition info, and an AI cooking assistant.',
+};
 
 export default async function HomePage() {
   const { env } = await getCloudflareContext({ async: true });
