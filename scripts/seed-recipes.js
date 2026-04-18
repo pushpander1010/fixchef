@@ -242,6 +242,11 @@ const recipes = [
 ];
 
 // Generate SQL INSERT statements
+// Write to a UTF-8 file to avoid Windows code page encoding issues with special characters.
+const fs = require('fs');
+const path = require('path');
+
+const lines = [];
 for (const r of recipes) {
   const sql = `INSERT OR REPLACE INTO recipes (
   slug, version, title, category, description, hero_image_url,
@@ -257,5 +262,9 @@ for (const r of recipes) {
   '${r.youtube_video_id}', '${r.prep_time}', '${r.cook_time}', '${r.total_time}',
   '${r.difficulty}', '${r.servings}', '${r.related_recipes}', ${r.published}
 );`;
-  console.log(sql);
+  lines.push(sql);
 }
+
+const outPath = path.join(__dirname, 'seed-recipes.sql');
+fs.writeFileSync(outPath, lines.join('\n') + '\n', 'utf8');
+console.log(`Wrote ${lines.length} INSERT statements to ${outPath}`);
