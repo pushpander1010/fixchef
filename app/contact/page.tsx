@@ -1,19 +1,23 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Get in touch with the FixChef team — for recipe suggestions, partnerships, or general enquiries.',
+  alternates: { canonical: 'https://fixchef.com/contact' },
+  openGraph: {
+    title: 'Contact FixChef',
+    description: 'Get in touch with the FixChef team for recipe suggestions, partnerships, bug reports, or general enquiries.',
+    url: 'https://fixchef.com/contact',
+    type: 'website',
+  },
 };
 
 export default function ContactPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
-      <nav className="text-sm text-orange-400 mb-6">
-        <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
-        <span className="mx-2 text-orange-200">/</span>
-        <span className="text-gray-500">Contact</span>
-      </nav>
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Contact', href: '/contact' }]} />
 
       <h1 className="text-4xl font-display font-bold text-gray-900 mb-3">Contact Us</h1>
       <p className="text-lg text-gray-600 mb-10">

@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { getRecipeBySlug } from '@/lib/db';
 import { generateRecipeMetadata, generateRecipeJsonLd } from '@/lib/seo';
 
+import Breadcrumb from '@/components/Breadcrumb';
 import RecipeHero from '@/components/RecipeHero';
 import IngredientsList from '@/components/IngredientsList';
 import StepGuide from '@/components/StepGuide';
@@ -39,6 +40,9 @@ export default async function RecipePage({ params }: PageProps) {
 
   const jsonLd = generateRecipeJsonLd(recipe);
 
+  // Build category slug for breadcrumb link (e.g. "Healthy" → "healthy")
+  const categorySlug = recipe.category.toLowerCase().replace(/\s+/g, '-');
+
   return (
     <>
       <script
@@ -47,6 +51,14 @@ export default async function RecipePage({ params }: PageProps) {
       />
 
       <main className="max-w-4xl mx-auto px-4 py-8 space-y-10">
+        <Breadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: recipe.category, href: `/category/${categorySlug}` },
+            { label: recipe.title, href: `/recipes/${recipe.slug}` },
+          ]}
+        />
+
         <RecipeHero recipe={recipe} />
 
         <AdSlot slot="above-ingredients" />

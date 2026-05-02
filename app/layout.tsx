@@ -131,6 +131,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <ul className="space-y-2 text-sm">
                   <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                   <li><Link href="/terms"          className="hover:text-white transition-colors">Terms of Use</Link></li>
+                  <li><Link href="/disclaimer"     className="hover:text-white transition-colors">Disclaimer</Link></li>
                 </ul>
               </div>
 

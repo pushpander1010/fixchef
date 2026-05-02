@@ -1,19 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Learn how FixChef collects, uses, and protects your personal information.',
+  alternates: { canonical: 'https://fixchef.com/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
-      <nav className="text-sm text-orange-400 mb-6">
-        <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
-        <span className="mx-2 text-orange-200">/</span>
-        <span className="text-gray-500">Privacy Policy</span>
-      </nav>
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy', href: '/privacy-policy' }]} />
 
       <h1 className="text-4xl font-display font-bold text-gray-900 mb-2">Privacy Policy</h1>
       <p className="text-sm text-gray-400 mb-10">Last updated: April 2026</p>

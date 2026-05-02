@@ -1,19 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Terms of Use',
   description: 'Read the FixChef Terms of Use — the rules and guidelines for using our recipe website.',
+  alternates: { canonical: 'https://fixchef.com/terms' },
 };
 
 export default function TermsPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
-      <nav className="text-sm text-orange-400 mb-6">
-        <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
-        <span className="mx-2 text-orange-200">/</span>
-        <span className="text-gray-500">Terms of Use</span>
-      </nav>
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Terms of Use', href: '/terms' }]} />
 
       <h1 className="text-4xl font-display font-bold text-gray-900 mb-2">Terms of Use</h1>
       <p className="text-sm text-gray-400 mb-10">Last updated: April 2026</p>
