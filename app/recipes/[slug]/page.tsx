@@ -78,6 +78,65 @@ export default async function RecipePage({ params }: PageProps) {
         <AdSlot slot="sidebar-below-video" />
 
         <RecipeChatbot recipe={recipe} />
+
+        {/* Related Resources Section for SEO */}
+        <section className="mt-12 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-100">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            📚 Learn More About This Recipe
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Cooking Techniques</h3>
+              <ul className="space-y-1.5 text-gray-600">
+                <li>
+                  <a 
+                    href="https://www.seriouseats.com/food-lab" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 transition-colors underline"
+                  >
+                    The Food Lab - Cooking Science
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.bbcgoodfood.com/howto/guide" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 transition-colors underline"
+                  >
+                    BBC Good Food Technique Guides
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Nutrition & Safety</h3>
+              <ul className="space-y-1.5 text-gray-600">
+                <li>
+                  <a 
+                    href="https://www.nutrition.gov/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 transition-colors underline"
+                  >
+                    Nutrition Information
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.foodsafety.gov/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 transition-colors underline"
+                  >
+                    Food Safety Guidelines
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

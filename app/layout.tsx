@@ -89,7 +89,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
             {/* Top row: logo + columns */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-8 mb-10">
 
               {/* Brand */}
               <div className="col-span-2 sm:col-span-1">
@@ -132,6 +132,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                   <li><Link href="/terms"          className="hover:text-white transition-colors">Terms of Use</Link></li>
                   <li><Link href="/disclaimer"     className="hover:text-white transition-colors">Disclaimer</Link></li>
+                </ul>
+              </div>
+
+              {/* Resources - External Links for SEO */}
+              <div>
+                <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Resources</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="https://www.nutrition.gov/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Nutrition Info</a></li>
+                  <li><a href="https://www.foodsafety.gov/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Food Safety</a></li>
+                  <li><a href="https://www.eatright.org/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Healthy Eating</a></li>
+                  <li><a href="https://www.bbcgoodfood.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">BBC Good Food</a></li>
+                  <li><a href="https://www.seriouseats.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Serious Eats</a></li>
                 </ul>
               </div>
 

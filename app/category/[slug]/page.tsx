@@ -96,6 +96,67 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
       </div>
 
       <Pagination page={page} totalPages={totalPages} basePath={basePath} />
+
+      {/* Helpful Tips Section for SEO */}
+      <section className="mt-12 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-100">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">
+          💡 Tips for {categoryDisplay} Cooking
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
+          <div>
+            <p className="mb-3">
+              Explore our collection of {categoryDisplay.toLowerCase()} recipes with detailed instructions, 
+              nutrition information, and cooking tips. Each recipe includes step-by-step guidance to help 
+              you create delicious meals at home.
+            </p>
+            <p>
+              <a 
+                href="https://www.seriouseats.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-orange-600 hover:text-orange-700 underline font-medium"
+              >
+                Learn advanced cooking techniques →
+              </a>
+            </p>
+          </div>
+          <div className="bg-white rounded-lg p-4 border border-orange-200">
+            <h3 className="font-medium text-gray-800 mb-2">Helpful Resources</h3>
+            <ul className="space-y-2">
+              <li>
+                <a 
+                  href="https://www.nutrition.gov/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-orange-600 transition-colors underline"
+                >
+                  Nutrition Guidelines
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.foodsafety.gov/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-orange-600 transition-colors underline"
+                >
+                  Food Safety Tips
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.bbcgoodfood.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-orange-600 transition-colors underline"
+                >
+                  BBC Good Food
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

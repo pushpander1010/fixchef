@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
-import { getAllPublishedSlugs } from '@/lib/db';
+import { getAllPublishedSlugs, getAllCategories } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,6 +15,13 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/terms`,          lastModified: new Date(), changeFrequency: 'yearly',   priority: 0.3 },
 ];
 
+// All available categories
+const CATEGORY_SLUGS = [
+  'sweets', 'healthy', 'spicy', 'mexican', 'fast-foods', 'gym-fitness',
+  'diet', 'sour', 'pasta', 'asian', 'soups', 'breakfast', 'meal-prep',
+  'snacks', 'drinks', 'baking'
+];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { env } = await getCloudflareContext({ async: true });
   const slugs = await getAllPublishedSlugs(env.DB);
@@ -26,5 +33,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...STATIC_PAGES, ...recipePages];
+  // Add category pages to sitemap
+  const categoryPages: MetadataRoute.Sitemap = CATEGORY_SLUGS.map((slug) => ({
+    url: `${SITE_URL}/category/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.7,
+  }));
+
+  return [...STATIC_PAGES, ...categoryPages, ...recipePages];
 }
