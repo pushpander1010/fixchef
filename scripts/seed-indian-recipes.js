@@ -1,0 +1,1 @@
+// Indian recipes seed script

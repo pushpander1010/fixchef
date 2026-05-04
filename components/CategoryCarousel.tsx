@@ -20,6 +20,7 @@ const CATEGORIES = [
   { label: '🫙 Snacks',       slug: 'snacks',      color: 'bg-purple-100 text-purple-700 hover:bg-purple-200' },
   { label: '🍹 Drinks',       slug: 'drinks',      color: 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200' },
   { label: '🎂 Baking',       slug: 'baking',      color: 'bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-200' },
+  { label: '🇮🇳 Indian',      slug: 'indian',      color: 'bg-orange-100 text-orange-800 hover:bg-orange-200' },
 ];
 
 // Duplicate for seamless infinite loop
