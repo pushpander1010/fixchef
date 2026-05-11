@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const SITE_URL = 'https://fixchef.com';
+const SITE_URL = 'https://www.fixchef.com';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

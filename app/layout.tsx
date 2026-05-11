@@ -22,7 +22,10 @@ export const metadata: Metadata = {
     template: "%s | FixChef",
   },
   description: "Discover thousands of easy, delicious recipes with step-by-step guides, nutrition info, and an AI cooking assistant.",
-  metadataBase: new URL("https://fixchef.com"),
+  metadataBase: new URL("https://www.fixchef.com"),
+  alternates: {
+    canonical: "https://www.fixchef.com",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

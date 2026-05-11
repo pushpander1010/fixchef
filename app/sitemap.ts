@@ -4,7 +4,7 @@ import { getAllPublishedSlugs, getAllCategories } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
-const SITE_URL = 'https://fixchef.com';
+const SITE_URL = 'https://www.fixchef.com';
 
 const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/`,               lastModified: new Date(), changeFrequency: 'daily',   priority: 1.0 },
