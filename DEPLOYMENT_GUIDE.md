@@ -5,6 +5,7 @@
 ✅ **Build:** Successful (`npm run build` completes without errors)
 ✅ **Configuration:** Clean (no problematic redirects or middleware)
 ✅ **Code:** Ready for deployment (generateStaticParams properly configured)
+✅ **Routes:** Fixed (explicit routes for fixchef.com and www.fixchef.com added to wrangler.toml)
 
 ## Deployment Checklist
 
@@ -119,6 +120,20 @@ If you want `fixchef.com` to redirect to `www.fixchef.com`:
    - Ad slots are visible
 
 ## Troubleshooting
+
+### Issue: "Page jumps to /:path* which gives 404"
+
+**Cause:** Domain routing not configured in Cloudflare Workers.
+
+**Solution:**
+- The `wrangler.toml` now includes explicit routes for both `fixchef.com` and `www.fixchef.com`
+- After deploying with `npm run deploy`, both domains will route to the worker
+- If you still see 404s, verify in Cloudflare dashboard:
+  1. Go to **Workers & Pages** → **fixchef** → **Triggers** → **Routes**
+  2. Ensure both routes are listed:
+     - `fixchef.com/*`
+     - `www.fixchef.com/*`
+  3. If missing, add them manually via the dashboard
 
 ### Issue: "Page refresh jumps to homepage"
 
