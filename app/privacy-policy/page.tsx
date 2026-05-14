@@ -5,7 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Learn how FixChef collects, uses, and protects your personal information.',
-  alternates: { canonical: 'https://fixchef.com/privacy-policy' },
+  alternates: { canonical: 'https://www.fixchef.com/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {

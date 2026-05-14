@@ -8,7 +8,12 @@
   "/robots.txt/route": "app/robots.txt/route.js",
   "/icon/route": "app/icon/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/page": "app/page.js",
+  "/about/page": "app/about/page.js",
   "/category/[slug]/page": "app/category/[slug]/page.js",
-  "/recipes/[slug]/page": "app/recipes/[slug]/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/disclaimer/page": "app/disclaimer/page.js",
+  "/page": "app/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js",
+  "/recipes/[slug]/page": "app/recipes/[slug]/page.js",
+  "/terms/page": "app/terms/page.js"
 }

@@ -5,11 +5,11 @@ import Breadcrumb from '@/components/Breadcrumb';
 export const metadata: Metadata = {
   title: 'About FixChef — Our Mission & Story',
   description: 'Learn about FixChef — our mission to make home cooking easy, delicious, and accessible for everyone with step-by-step recipes, nutrition info, and an AI cooking assistant.',
-  alternates: { canonical: 'https://fixchef.com/about' },
+  alternates: { canonical: 'https://www.fixchef.com/about' },
   openGraph: {
     title: 'About FixChef — Our Mission & Story',
     description: 'FixChef makes home cooking approachable with clear step-by-step recipes, real nutrition data, video guides, and an AI assistant on every recipe page.',
-    url: 'https://fixchef.com/about',
+    url: 'https://www.fixchef.com/about',
     type: 'website',
   },
 };

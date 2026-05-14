@@ -8,7 +8,12 @@
   "/robots.txt/route": "/robots.txt",
   "/icon/route": "/icon",
   "/sitemap.xml/route": "/sitemap.xml",
-  "/page": "/",
+  "/about/page": "/about",
   "/category/[slug]/page": "/category/[slug]",
-  "/recipes/[slug]/page": "/recipes/[slug]"
+  "/contact/page": "/contact",
+  "/disclaimer/page": "/disclaimer",
+  "/page": "/",
+  "/privacy-policy/page": "/privacy-policy",
+  "/recipes/[slug]/page": "/recipes/[slug]",
+  "/terms/page": "/terms"
 }

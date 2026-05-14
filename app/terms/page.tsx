@@ -5,7 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Terms of Use',
   description: 'Read the FixChef Terms of Use — the rules and guidelines for using our recipe website.',
-  alternates: { canonical: 'https://fixchef.com/terms' },
+  alternates: { canonical: 'https://www.fixchef.com/terms' },
 };
 
 export default function TermsPage() {

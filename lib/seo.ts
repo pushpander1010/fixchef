@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { RecipeRecord } from './types';
 
-const BASE_URL = 'https://fixchef.com';
+const BASE_URL = 'https://www.fixchef.com';
 
 /**
  * Generates a Next.js Metadata object for a recipe page.

@@ -53,9 +53,7 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/terms`,          lastModified: new Date(), changeFrequency: 'yearly',   priority: 0.3 },
 ];
 
-// All available categories
-// Total: 16 category pages
-const CATEGORY_SLUGS = [
+const DEFAULT_CATEGORY_SLUGS = [
   'sweets', 'healthy', 'spicy', 'mexican', 'fast-foods', 'gym-fitness',
   'diet', 'sour', 'pasta', 'asian', 'soups', 'breakfast', 'meal-prep',
   'snacks', 'drinks', 'baking'
@@ -63,7 +61,18 @@ const CATEGORY_SLUGS = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { env } = await getCloudflareContext({ async: true });
-  const slugs = await getAllPublishedSlugs(env.DB);
+  const [slugs, dbCategories] = await Promise.all([
+    getAllPublishedSlugs(env.DB),
+    getAllCategories(env.DB).catch(() => []),
+  ]);
+
+  const categorySlugs = Array.from(
+    new Set(
+      [...DEFAULT_CATEGORY_SLUGS, ...dbCategories]
+        .map((slug) => slug.trim().toLowerCase())
+        .filter(Boolean)
+    )
+  ).sort();
 
   const recipePages: MetadataRoute.Sitemap = slugs.map((slug) => ({
     url: `${SITE_URL}/recipes/${slug}`,
@@ -73,7 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Add category pages to sitemap
-  const categoryPages: MetadataRoute.Sitemap = CATEGORY_SLUGS.map((slug) => ({
+  const categoryPages: MetadataRoute.Sitemap = categorySlugs.map((slug) => ({
     url: `${SITE_URL}/category/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'daily',

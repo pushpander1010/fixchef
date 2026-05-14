@@ -5,11 +5,11 @@ import Breadcrumb from '@/components/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Get in touch with the FixChef team — for recipe suggestions, partnerships, or general enquiries.',
-  alternates: { canonical: 'https://fixchef.com/contact' },
+  alternates: { canonical: 'https://www.fixchef.com/contact' },
   openGraph: {
     title: 'Contact FixChef',
     description: 'Get in touch with the FixChef team for recipe suggestions, partnerships, bug reports, or general enquiries.',
-    url: 'https://fixchef.com/contact',
+    url: 'https://www.fixchef.com/contact',
     type: 'website',
   },
 };

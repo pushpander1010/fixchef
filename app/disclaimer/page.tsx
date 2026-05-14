@@ -5,7 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 export const metadata: Metadata = {
   title: 'Disclaimer',
   description: 'Important disclaimers about FixChef recipes, nutrition information, AI-generated content, and advertising.',
-  alternates: { canonical: 'https://fixchef.com/disclaimer' },
+  alternates: { canonical: 'https://www.fixchef.com/disclaimer' },
 };
 
 export default function DisclaimerPage() {

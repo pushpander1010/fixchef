@@ -22,7 +22,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.label,
-      item: `https://fixchef.com${item.href}`,
+      item: `https://www.fixchef.com${item.href}`,
     })),
   };
 
