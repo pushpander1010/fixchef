@@ -19,6 +19,13 @@ binding = "DB"
 database_name = "fixchef"
 database_id = "03bb856b-d82a-48d9-9042-8f289528030d"
 
+# ── Routes ──────────────────────────────────────────────────────────────────
+# Route all traffic to the worker
+routes = [
+  { pattern = "fixchef.com/*", zone_name = "fixchef.com" },
+  { pattern = "www.fixchef.com/*", zone_name = "fixchef.com" }
+]
+
 # ── Secrets / env vars ──────────────────────────────────────────────────────
 # For local dev these are read from .dev.vars (gitignored).
 # In production set them via: wrangler secret put TOGETHER_API_KEY
