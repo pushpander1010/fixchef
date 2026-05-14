@@ -6,16 +6,8 @@ const nextConfig = {
       { protocol: 'https', hostname: '**.unsplash.com' },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'fixchef.com' }],
-        destination: 'https://www.fixchef.com/:path*',
-        permanent: true,
-      },
-    ];
-  },
+  // Redirect handling is done at the Cloudflare Worker level (wrangler.toml)
+  // Do NOT use Next.js redirects for domain redirects in Cloudflare Workers
 };
 
 if (process.env.NODE_ENV === 'development' && !process.env.NEXT_BUILD_WORKER) {

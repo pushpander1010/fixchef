@@ -11,14 +11,14 @@
       "page": "/",
       "matchers": [
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!_next|favicon.ico|ads.txt).*))(\\.json)?[\\/#\\?]?$",
-          "originalSource": "/((?!_next|favicon.ico|ads.txt).*)"
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!_next\\/static|_next\\/image|favicon.ico|ads.txt|robots.txt|sitemap.xml).*))(\\.json)?[\\/#\\?]?$",
+          "originalSource": "/((?!_next/static|_next/image|favicon.ico|ads.txt|robots.txt|sitemap.xml).*)"
         }
       ],
       "wasm": [],
       "assets": [],
       "env": {
-        "__NEXT_BUILD_ID": "OmrbiESPTxu7cIo-U4UVb",
+        "__NEXT_BUILD_ID": "qaqRpMrzaNRbIuKkC7rdF",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "wVrr1ga7LxDVa52ip+lqh1EYtJOERHx1lkWKRsFUSuU=",
         "__NEXT_PREVIEW_MODE_ID": "428e03de6fdf100580ce75b79293381e",
         "__NEXT_PREVIEW_MODE_SIGNING_KEY": "00a36e36d723f6079e6c5a8addc34b4b1ea11cdce1ad12f1a79f916d4fcc460b",

@@ -316,20 +316,7 @@
     "turbopack": {
       "root": "C:\\AI\\fixchef"
     },
-    "distDirRoot": ".next",
-    "_originalRedirects": [
-      {
-        "source": "/:path*",
-        "has": [
-          {
-            "type": "host",
-            "value": "fixchef.com"
-          }
-        ],
-        "destination": "https://www.fixchef.com/:path*",
-        "permanent": true
-      }
-    ]
+    "distDirRoot": ".next"
   },
   "appDir": "C:\\AI\\fixchef",
   "relativeAppDir": "",
