@@ -4,9 +4,11 @@ compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
 # ── Routes ──────────────────────────────────────────────────────────────────
-# Route all traffic to the worker
+# Route all traffic to the worker (including root path)
 routes = [
+  { pattern = "fixchef.com/", zone_name = "fixchef.com" },
   { pattern = "fixchef.com/*", zone_name = "fixchef.com" },
+  { pattern = "www.fixchef.com/", zone_name = "fixchef.com" },
   { pattern = "www.fixchef.com/*", zone_name = "fixchef.com" }
 ]
 
