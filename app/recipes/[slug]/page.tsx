@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import type { Metadata } from 'next';
 
-import { getRecipeBySlug } from '@/lib/db';
+import { getRecipeBySlug, getAllPublishedSlugs } from '@/lib/db';
 import { generateRecipeMetadata, generateRecipeJsonLd } from '@/lib/seo';
 
 import Breadcrumb from '@/components/Breadcrumb';
@@ -19,6 +19,17 @@ export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  try {
+    const { env } = await getCloudflareContext({ async: true });
+    const slugs = await getAllPublishedSlugs(env.DB);
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    // If database fails, return empty array - pages will be generated on-demand
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

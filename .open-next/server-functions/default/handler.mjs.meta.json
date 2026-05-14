@@ -4736,7 +4736,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/recipes/[slug]/page.js": {
-      "bytes": 51021,
+      "bytes": 51173,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
@@ -8420,7 +8420,7 @@
           "bytesInOutput": 29129
         },
         ".open-next/server-functions/default/.next/server/app/recipes/[slug]/page.js": {
-          "bytesInOutput": 51765
+          "bytesInOutput": 51922
         },
         ".open-next/server-functions/default/.next/server/app/_global-error/page.js": {
           "bytesInOutput": 27973
@@ -8612,7 +8612,7 @@
           "bytesInOutput": 61549
         }
       },
-      "bytes": 3987795
+      "bytes": 3987952
     }
   }
 }
